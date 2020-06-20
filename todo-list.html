@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Material design icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./CSS/todo-list.all.min.css">
     <title>Document</title>
 </head>
@@ -13,43 +15,109 @@
     
     <section class="mb-m">
         <div class="container">
-            <h2>New Task</h2>
-            <div >
-                <div class="d-flex flex-d-col">
-                    <label for="title">Title</label>
-                    <input type="text" id="title">
-                </div>   
-                <div class="d-flex flex-d-col">
-                    <label for="content">Content</label>
-                    <input type="text" id="content">
+            <h2 class="fz-m mb-1">New Task</h2>
+            <div class="d-flex pb-m decoration-line-b">
+                <div class="flex-1">
+                    <div class="d-flex flex-d-col mb-tiny" >
+                        <label class="mb-tiny font-primary color-basic-b" for="title">Title</label>
+                        <input type="text" id="title" placeholder="type title">
+                    </div>   
+                    <div class="d-flex flex-d-col">
+                        <label class="mb-tiny font-primary color-basic-b" for="content">Content</label>
+                        <input type="text" id="content" placeholder="type task">
+                    </div>
+                </div>
+                <div class="d-flex jc-flex-start ai-flex-end flex-1">
+                    <input type="submit" value="ADD " class="submit-btn">
                 </div>
             </div>
         </div>
     </section>
-
+    
     <section>
         <div class="container">
-            <div class="d-flex flex-wrap-w">
-                <div class="card mr-1">
-                    <div>
-                        <p class="fz-sm fw-bold color-primary">title-xxx</p>
-                        <p class="color-basic-b">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, at.</p>
+            <div class="d-flex jc-space-between flex-wrap-w">
+                <div class="card mb-1 pb-1 pt-1">
+                    <div class="pr-xs pl-xs">
+                        <p class="pb-1 fz-sm color-primary font-primary decoration-line-b">title-xxx</p>
+                        <p class="pl-1 mt-1 color-secondary decoration-line-l">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, at.</p>
                     </div>
-                    <ul class="d-flex jc-space-between">
-                        <li class="d-flex ai-center">
-                            <span class="material-icons mr-tiny">check_circle_outline</span>
-                            <p>Done</p>
+                    <ul class="d-flex jc-space-between pt-1 pr-xs pl-xs">
+                        <li class="card-btn d-flex jc-center ai-center flex-1">
+                            <span class="material-icons mr-1">check_circle_outline</span>
+                            <p class="fw-bold">Done</p>
                         </li>
-                        <li class="d-flex ai-center">
-                            <span class="material-icons mr-tiny">delete</span>
-                            <p>Delete</p>
+                        <li class="card-btn d-flex jc-center ai-center flex-1">
+                            <span class="material-icons mr-1">delete</span>
+                            <p class="fw-bold">Delete</p>
                         </li>
                     </ul>
                 </div>
             </div>
-                
         </div>
     </section>
 
 </body>
+<script>
+
+    // let tit = document.getElementById("title");
+    // let cont= document.getElementById("content");
+    // let submitBtn = document.querySelector(".submit-btn");
+    // let todoData = [
+    //     {
+    //         title : "hi title",
+    //         content: "hi content",
+    //     },
+    //     {
+    //         title : "hi title2",
+    //         content: "hi content2",
+    //     }
+    // ];
+
+    // submitBtn.addEventListener('click',addTask);
+
+    // function addTask(){
+    //     let titleTxt = tit.value;
+    //     let contTxt  = cont.value;
+        
+    //     console.log("titleTxt",titleTxt);
+    //     console.log("contTxt",contTxt);
+
+    //     todoData.push({
+    //         title: tit.value,
+    //         content: cont.value
+    //     });
+    //     console.log("todoData",todoData)
+    // };
+
+    // let card = document.querySelector(".card");
+
+
+    // // function render(){
+        
+    // // }
+
+    // todoData.forEach(function(task,index){
+        
+    //     let str = `
+    //         <div class="card mr-1" task-index=${index+1}>
+    //             <div>
+    //                 <p class="fz-sm fw-bold color-primary">${task.title}</p>
+    //                 <p class="color-basic-b">${task.content}</p>
+    //             </div>
+    //             <ul class="d-flex jc-space-between">
+    //                 <li class="d-flex ai-center">
+    //                     <span class="material-icons mr-tiny">check_circle_outline</span>
+    //                     <p>Done</p>
+    //                 </li>
+    //                 <li class="d-flex ai-center">
+    //                     <span class="material-icons mr-tiny">delete</span>
+    //                     <p>Delete</p>
+    //                 </li>
+    //             </ul>
+    //         </div>`
+    //     console.log(str);
+    //     card.innerHTML += str
+    // })
+</script>
 </html>
