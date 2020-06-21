@@ -73,14 +73,22 @@
     submitBtn.addEventListener('click',addTask);
     function addTask(){
         dayTxt = new Date().toLocaleDateString();
-        console.log("date",dayTxt);
-        titleTxt = tit.value
-        contTxt  = cont.value
-        todoData.push({
-            title: tit.value,
-            content: cont.value,
-            date: dayTxt
-        });
+        // console.log("date",dayTxt);
+        titleTxt = tit.value;
+        contTxt  = cont.value;
+        if (titleTxt == "" && contTxt == ""){
+            alert("Please type the title & content");
+        }else if(titleTxt == ""){
+            alert("Please type the title");
+        }else if(contTxt == ""){
+            alert("Please type the content");
+        }else{
+            todoData.push({
+                title: tit.value,
+                content: cont.value,
+                date: dayTxt
+            });
+        }
         render();
     };
 
@@ -107,7 +115,7 @@
                         </li>
                     </ul>
                 </div>`
-        })
+        });
         card.innerHTML += str;
         let doneBtn = document.querySelectorAll(".done-btn");
         let deleBtn = document.querySelectorAll(".dele-btn");
