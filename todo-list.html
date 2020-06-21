@@ -8,10 +8,10 @@
     <!-- font -->
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./CSS/todo-list.all.min.css">
-    <title>Document</title>
+    <title>TODO LIST</title>
 </head>
 <body>
-    <h1 class="fz-lg fw-bold ta-center color-primary mb-m">TO DO LIST</h1>
+    <h1 class="fz-lg fw-bold ta-center color-primary mt-1 mb-m">TO DO LIST</h1>
     
     <section class="mb-m">
         <div class="container">
@@ -64,7 +64,7 @@
     let cont= document.getElementById("content");
     let submitBtn = document.querySelector(".submit-btn");
 
-    let titleTxt, contTxt;
+    let titleTxt, contTxt, dayTxt;
     let todoData = [];
     let str = '';
     let card = document.querySelector(".card-wrap");
@@ -72,11 +72,14 @@
     // 新增 Task
     submitBtn.addEventListener('click',addTask);
     function addTask(){
+        dayTxt = new Date().toLocaleDateString();
+        console.log("date",dayTxt);
         titleTxt = tit.value
         contTxt  = cont.value
         todoData.push({
             title: tit.value,
-            content: cont.value
+            content: cont.value,
+            date: dayTxt
         });
         render();
     };
@@ -91,11 +94,15 @@
                     </div>
                     <ul class="d-flex jc-space-between pt-1 pr-xs pl-xs">
                         <li class="card-btn done-btn d-flex jc-center ai-center flex-1">
-                            <span class="material-icons mr-1">check_circle_outline</span>
+                            <span class="material-icons mr-tiny">calendar_today</span>
+                            <p class="fw-bold">${task.date}</p>
+                        </li>
+                        <li class="card-btn done-btn d-flex jc-center ai-center flex-1">
+                            <span class="material-icons mr-tiny">check_circle_outline</span>
                             <p class="fw-bold">Done</p>
                         </li>
                         <li class="card-btn dele-btn d-flex jc-center ai-center flex-1">
-                            <span class="material-icons mr-1">delete</span>
+                            <span class="material-icons mr-tiny">delete</span>
                             <p class="fw-bold">Delete</p>
                         </li>
                     </ul>
