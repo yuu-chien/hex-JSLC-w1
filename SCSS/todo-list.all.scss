@@ -12,12 +12,21 @@
 .container {
     max-width: 1200px;
     margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-.card {
-    width: 30%;
-    border: 1px solid $color-basic-b;
-    border-radius: 8px;
+.card-wrap {
+    width: 100%;
+    .card {
+        width: 30%;
+        margin-right: 48px;
+        border: 1px solid $color-basic-b;
+        border-radius: 8px;
+    }
+    .card:nth-child(3n) {
+        margin-right: 0;
+    }
 }
 
 .card-btn {
