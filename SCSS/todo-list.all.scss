@@ -56,3 +56,6 @@ input[type=text] {
 .decoration-line-l {
     border-left: 4px solid $color-primary;
 }
+.word-wrap-break {
+    word-wrap: break-word;
+}
