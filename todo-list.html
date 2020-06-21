@@ -95,7 +95,7 @@
     function render(){
         todoData.forEach(function(task,index){
             str = `
-                <div class="card mb-1 pb-1 pt-1" task-index=${index+1}>
+                <div class="card d-flex flex-d-col jc-space-between mb-1 pb-1 pt-1" task-index=${index+1}>
                     <div class="pr-xs pl-xs">
                         <p class="pb-1 fz-sm color-primary font-primary decoration-line-b word-wrap-break">${task.title}</p>
                         <p class="pl-1 mt-1 color-secondary decoration-line-l word-wrap-break">${task.content}</p>
