@@ -93,6 +93,8 @@
                 date: dayTxt
             });
             render();
+            tit.value = '';
+            cont.value  = '';
         }
     };
 
@@ -126,17 +128,18 @@
         // DONE 事件
         doneBtn.forEach(function(done){
             done.addEventListener('click',doneTask);
-            function doneTask(){
-                this.closest(".card").style.opacity = "0.5";
-            }
         });
         // Delete 事件
         deleBtn.forEach(function(del){
             del.addEventListener('click',deleTask);
-            function deleTask(){
-                this.closest(".card").remove();
-            }
         })
+    }
+
+    function doneTask(){
+        this.closest(".card").style.opacity = "0.5";
+    }
+    function deleTask(){
+        this.closest(".card").remove();
     }
 
     render();
