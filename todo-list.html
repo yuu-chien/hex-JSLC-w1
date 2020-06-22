@@ -80,11 +80,11 @@
         // console.log("date",dayTxt);
         titleTxt = tit.value;
         contTxt  = cont.value;
-        if (titleTxt == "" && contTxt == ""){
+        if (titleTxt === "" && contTxt === ""){
             alert("Please type the title & content");
-        }else if(titleTxt == ""){
+        }else if(titleTxt === ""){
             alert("Please type the title");
-        }else if(contTxt == ""){
+        }else if(contTxt === ""){
             alert("Please type the content");
         }else{
             todoData.push({
