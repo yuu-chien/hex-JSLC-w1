@@ -16,6 +16,14 @@
     padding-right: 10px;
 }
 
+.btn {
+    cursor: pointer;
+    padding: 8px 16px;
+    margin-left: 16px;
+    border: none;
+    border-radius: 4px;
+}
+
 .card-wrap {
     width: 100%;
     .card {
@@ -37,13 +45,8 @@
     }
 }
 .submit-btn {
-    cursor: pointer;
-    padding: 8px 16px;
-    margin-left: 16px;
-    border: none;
     background-color: $color-primary;
     color: #fff;
-    border-radius: 4px;
 }
 input[type=text] {
     padding: 8px;

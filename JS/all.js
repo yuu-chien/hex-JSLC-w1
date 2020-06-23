@@ -1,11 +1,12 @@
 let tit = document.getElementById("title");
 let cont= document.getElementById("content");
 let submitBtn = document.querySelector(".submit-btn");
+let deleAllBtn = document.querySelector(".delAll-btn");
 
 let titleTxt, contTxt, dayTxt;
 let todoData = [];
 let str = '';
-let card = document.querySelector(".card-wrap");
+let cardWrap = document.querySelector(".card-wrap");
 
 // 新增 Task
 submitBtn.addEventListener('click',addTask);
@@ -26,6 +27,7 @@ function addTask(){
             content: cont.value,
             date: dayTxt
         });
+        localStorage.setItem('item',JSON.stringify(todoData));
         render();
         tit.value = '';
         cont.value  = '';
@@ -56,7 +58,7 @@ function render(){
                 </ul>
             </div>`
     });
-    card.innerHTML += str;
+    cardWrap.innerHTML += str;
     let doneBtn = document.querySelectorAll(".done-btn");
     let deleBtn = document.querySelectorAll(".dele-btn");
     // DONE 事件
@@ -75,5 +77,11 @@ function doneTask(){
 function deleTask(){
     this.closest(".card").remove();
 }
+
+// deleAllBtn.addEventListener('click',deleAllTask);
+// function deleAllTask(){
+//     todoData = [];
+//     render(todoData);
+// }
 
 render();
