@@ -27,7 +27,7 @@ function addTask(){
             content: cont.value,
             date: dayTxt
         });
-        localStorage.setItem('item',JSON.stringify(todoData));
+        localStorage.setItem('task',JSON.stringify(todoData));
         render();
         tit.value = '';
         cont.value  = '';
@@ -76,6 +76,7 @@ function doneTask(){
 }
 function deleTask(){
     this.closest(".card").remove();
+    localStorage.removeItem('task');
 }
 
 // deleAllBtn.addEventListener('click',deleAllTask);
